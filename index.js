@@ -6,6 +6,7 @@ const inputs_number = document.querySelectorAll('input[type="number"]');
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const condicion_de_salud = document.getElementById('condicion-de-salud');
 const enfermedades = document.querySelectorAll('.enf')
+const div_enfermedades = document.getElementById('div-enfermedades');
 const boton_enviar = document.getElementById('submit')
 const ingresado = document.getElementById('ingresado')
 const seccion_ingresado = document.getElementById('seccion6')
@@ -28,15 +29,19 @@ const activarElementos = (elemento, condicion) => {
   }
 }
 
+const mostrarElementos = (elemento, condicion) => {
+  if (condicion.checked){
+    elemento.style.display = ''
+  }else{
+    elemento.style.display = 'none'
+  }
+}
+
 
 formulario.onchange = () => {
-  activarElementos(tiempo_fiebre, fiebre)
-  activarElementos(enfermedades, condicion_de_salud)
-  if (ingresado.checked){
-    seccion_ingresado.style.display = ''
-  }else{
-    seccion_ingresado.style.display = 'none'
-  }
+  mostrarElementos(tiempo_fiebre, fiebre)
+  mostrarElementos(seccion_ingresado, ingresado)
+  mostrarElementos(div_enfermedades, condicion_de_salud)
 }
 
 formulario.onsubmit = e => {
