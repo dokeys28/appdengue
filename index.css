@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.div-form{
+  border: solid 1px lightgray;
+  background-color:rgba(180,180,180,0.08);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin:10%;
+}
+
+.div-form div{
+  padding:10px;
+  width:100%;
+}
+
+.div-riesgo{
+  display:flex;
+  border: solid 1px red;
+  background-color:red;
+  
+}
+
+.botones{
+  display: flex;
+  justify-content: center;
+}
+
+.encabezado{
+  border: solid 1px lightgray;
+}

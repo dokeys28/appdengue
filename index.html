@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
   <title>App dengue</title>
 </head>
 <body>
   <div class="div-form" id="div-form">
+    <div id="encabezado" class="encabezado">
+      <h1>Calculadora de Riesgo de Dengue</h1>
+    </div>
   <form class="formulario" id="formulario">
     <div class="seccion1" id="seccion1">
       <input type="checkbox" id="mayor" name="mayor" class="mayor" />
@@ -41,38 +45,47 @@
       <label for="alguien-mas" class="label-alguien-mas">Alguien mas con sintomas</label>
     </div>
     <div class="seccion4" id="seccion4">
-      <label for="llenado-capilar" class="label-llenado-capilar">Llenado Capilar</label>
-      <input type="number" id="llenado-capilar" name="llenado-capilar" step="0.01" placeholder="segundos"/> 
+      <label for="llenado-capilar" class="label-llenado-capilar">Llenado Capilar (segundos)</label>
+      <input type="number" id="llenado-capilar" name="llenado-capilar" step="0.01" /> 
       <br>
-      <label for="ta-sisto" class="label-ta">Presion arterial</label>
-      <input type="number" id="ta-sisto" name="ta-sisto"   placeholder="sistolica"/>
-      <input type="number" id="ta-diasto" name="ta-diasto"  placeholder="diastolica"/> 
+      <label for="ta-sisto" class="label-ta">Presion arterial (mmHg)</label>
+      <input type="number" id="ta-sisto" name="ta-sisto"   placeholder="sistólica"/>
+      <input type="number" id="ta-diasto" name="ta-diasto"  placeholder="diastólica"/> 
       <br>
-      <label for="fc" class="label-fc">Frecuencia cardiaca</label>
-      <input type="number" id="fc" name="fc"  placeholder="lpm"/> 
+      <label for="fc" class="label-fc">Frecuencia cardiaca (lpm)</label>
+      <input type="number" id="fc" name="fc"/> 
     </div>
     <div class="seccion5" id="seccion5">
-      <label for="leucocitos" class="label-leucocitos">Leucocitos</label>
-      <input type="number" id="leucocitos" name="leucocitos" step="0.01" placeholder="mm3"/> 
-      <label for="plaquetas" class="label-plaquetas">Plaquetas</label>
-      <input type="number" id="plaquetas" name="plaquetas" step="0.01" placeholder="mm3"/> 
-      <label for="hematocrito" class="label-hematocrito">Hematocrito</label>
-      <input type="number" id="hematocrito" name="hematocrito" step="0.01" placeholder="%"/> 
+      <label for="leucocitos" class="label-leucocitos">Leucocitos (mm3)</label>
+      <input type="number" id="leucocitos" name="leucocitos" step="0.01"/> 
+      <label for="plaquetas" class="label-plaquetas">Plaquetas (mm3)</label>
+      <input type="number" id="plaquetas" name="plaquetas" step="0.01"/> 
+      <label for="hematocrito" class="label-hematocrito">Hematocrito (%)</label>
+      <input type="number" id="hematocrito" name="hematocrito" step="0.01"/> 
     </div>
-    <div class="seccion6" id="seccion6">
-      <label for="TP" class="label-TP">TP</label>
-      <input type="number" id="TP" name="TP" step="0.01" placeholder="seg"/> 
-      <label for="TPT" class="label-TPT">TPT</label>
-      <input type="number" id="TPT" name="TPT" step="0.01" placeholder="seg"/> 
+    <div>
+      <input type="checkbox" id="ingresado" name="ingresado">Paciente ingresado</input>
+    </div>  
+    <div class="seccion6" id="seccion6" style="display: none;">
+      <label for="TP" class="label-TP">TP (seg)</label>
+      <input type="number" id="TP" name="TP" step="0.01" /> 
+      <label for="TPT" class="label-TPT">TPT (seg)</label>
+      <input type="number" id="TPT" name="TPT" step="0.01"/> 
       <label for="AST" class="label-AST">AST</label>
-      <input type="number" id="AST" name="AST" step="0.01" /> 
+      <input type="number" id="AST" name="AST" step="0.01"/> 
       <label for="ALT" class="label-ALT">ALT</label>
-      <input type="number" id="ALT" name="ALT" step="0.01" />
-      <label for="albumina" class="label-albumina">Albumina</label>
-      <input type="number" id="albumina" name="albumina" step="0.01" placeholder="g/dL"/>
+      <input type="number" id="ALT" name="ALT" step="0.01"/>
+      <label for="albumina" class="label-albumina">Albumina (g/dL)</label>
+      <input type="number" id="albumina" name="albumina" step="0.01"/>
     </div>
-    <input type="submit" name="submit" id="submit" class="submit">
+    <div id="botones" class="botones">
+      <input type="submit" name="submit" id="submit" value="Calcular" class="submit">
+      <button type= "button" class="borrar" id="borrar" name="borrar">Borrar</button>
+    </div>
   </form>
+  <div class="div-riesgo" id="div-riesgo" style="display: none;">
+    <h1>Aqui se muestra el riesgo</h1>
+  </div>
   </div>
   <script src="index.js"></script>
 </body>
