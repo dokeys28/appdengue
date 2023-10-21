@@ -1,114 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <title>App dengue</title>
 </head>
+
 <body>
   <div class="div-form" id="div-form">
     <div id="encabezado" class="encabezado">
       <h1>Calculadora de Riesgo de Dengue</h1>
     </div>
-  <form class="formulario" id="formulario">
-    <div class="seccion1" id="seccion1">
-      <input type="checkbox" id="mayor" name="mayor" class="mayor" />
-      <label for="mayor" class="label-mayor">Mayor de 18 años</label>
-      <input type="checkbox" id="fiebre" name="fiebre" class="fiebre" />
-      <label for="fiebre" class="label-fiebre">Fiebre</label>
-      <input list = "dl-tiempo-fiebre" id="tiempo-fiebre" placeholder="dias" name="tiempo-fiebre" style="display: none;"/>
-      <datalist type="text" id="dl-tiempo-fiebre" name="tiempo-fiebre" class="tiempo-fiebre" value="tiempo-fiebre">
-        <option value="0">menos de 24 horas</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="mas de 7">mas de una semana</option>
-      </datalist>
+    <form class="formulario" id="formulario">
+      <div class="seccion1" id="seccion1">
+        <input type="checkbox" id="mayor" name="mayor" class="mayor" />
+        <label for="mayor" class="label-mayor">Mayor de 18 años</label>
+        <input type="checkbox" id="fiebre" name="fiebre" class="fiebre" />
+        <label for="fiebre" class="label-fiebre">Fiebre</label>
+        <input list="dl-tiempo-fiebre" id="tiempo-fiebre" placeholder="dias" name="tiempo-fiebre"
+          style="display: none;" />
+        <datalist type="text" id="dl-tiempo-fiebre" name="tiempo-fiebre" class="tiempo-fiebre" value="tiempo-fiebre">
+          <option value="0">menos de 24 horas</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="mas de 7">mas de una semana</option>
+        </datalist>
+      </div>
+      <div class="seccion2" id="seccion2">
+        <input type="checkbox" id="condicion-de-salud" name="condicion-de-salud" />
+        <label for="condicion-de-salud" class="label-condicion-de-salud">Tiene alguna condicion de salud</label>
+        <div class="div-enfermedades" id="div-enfermedades" style="display: none;">
+          <input type="checkbox" id="hta" class="enf" name="hta" />
+          <label for="hta" class="label-hta">HTA</label>
+          <input type="checkbox" id="DM" class="enf" name="DM" />
+          <label for="DM" class="label-DM">DM</label>
+          <input type="checkbox" id="falcemia" class="enf" name="falcemia" />
+          <label for="falcemia" class="label-falcemia">Falcemia</label>
+        </div>
+      </div>
+      <div class="seccion3" id="seccion3">
+        <input type="checkbox" id="alguien-mas" name="alguien-mas" />
+        <label for="alguien-mas" class="label-alguien-mas">Alguien mas con sintomas</label>
+      </div>
+      <div class="seccion4" id="seccion4">
+        <div>
+          <label for="llenado-capilar" class="label-llenado-capilar">Llenado Capilar (segundos)</label>
+          <input type="number" id="llenado-capilar" name="llenado-capilar" step="0.01" />
+        </div>
+        <div>
+          <label for="ta-sisto" class="label-ta">Presion arterial (mmHg)</label>
+          <input type="number" id="ta-sisto" name="ta-sisto" placeholder="sistólica" /> /
+          <input type="number" id="ta-diasto" name="ta-diasto" placeholder="diastólica" />
+        </div>
+        <div>
+          <label for="fc" class="label-fc">Frecuencia cardiaca (lpm)</label>
+          <input type="number" id="fc" name="fc" />
+        </div>
+      </div>
+      <div class="seccion5" id="seccion5">
+        <div>
+          <label for="leucocitos" class="label-leucocitos">Leucocitos (mm3)</label>
+          <input type="number" id="leucocitos" name="leucocitos" step="0.01" />
+        </div>
+        <div>
+          <label for="plaquetas" class="label-plaquetas">Plaquetas (mm3)</label>
+          <input type="number" id="plaquetas" name="plaquetas" step="0.01" />
+        </div>
+        <div>
+          <label for="hematocrito" class="label-hematocrito">Hematocrito (%)</label>
+          <input type="number" id="hematocrito" name="hematocrito" step="0.01" />
+        </div>
+      </div>
+      <div>
+        <input type="checkbox" id="ingresado" name="ingresado">Paciente ingresado</input>
+      </div>
+      <div class="seccion6" id="seccion6" style="display: none;">
+        <div>
+          <label for="TP" class="label-TP">TP (seg)</label>
+          <input type="number" id="TP" name="TP" step="0.01" />
+        </div>
+        <div>
+          <label for="TPT" class="label-TPT">TPT (seg)</label>
+          <input type="number" id="TPT" name="TPT" step="0.01" />
+        </div>
+        <div>
+          <label for="AST" class="label-AST">AST</label>
+          <input type="number" id="AST" name="AST" step="0.01" />
+        </div>
+        <div>
+          <label for="ALT" class="label-ALT">ALT</label>
+          <input type="number" id="ALT" name="ALT" step="0.01" />
+        </div>
+        <div>
+          <label for="albumina" class="label-albumina">Albumina (g/dL)</label>
+          <input type="number" id="albumina" name="albumina" step="0.01" />
+        </div>
+      </div>
+      <div id="botones" class="botones">
+        <input type="submit" name="submit" id="submit" value="Calcular" class="submit">
+        <button type="button" class="borrar" id="borrar" name="borrar">Borrar</button>
+      </div>
+    </form>
+    <div class="div-riesgo" id="div-riesgo" style="display: none;">
+      <h1>Aqui se muestra el riesgo</h1>
     </div>
-    <div class="seccion2" id="seccion2">
-      <input type="checkbox" id="condicion-de-salud" name="condicion-de-salud" />
-      <label for="condicion-de-salud" class="label-condicion-de-salud">Tiene alguna condicion de salud</label>
-      <div class="div-enfermedades" id="div-enfermedades" style="display: none;">
-        <input type="checkbox" id="hta" class="enf" name="hta"/>
-        <label for="hta" class="label-hta">HTA</label>
-        <input type="checkbox" id="DM" class="enf" name="DM"/>
-        <label for="DM" class="label-DM">DM</label>
-        <input type="checkbox" id="falcemia" class="enf" name="falcemia"/>
-        <label for="falcemia" class="label-falcemia">Falcemia</label>
-      </div>
-    </div>
-    <div class="seccion3" id="seccion3">
-      <input type="checkbox" id="alguien-mas" name="alguien-mas" />
-      <label for="alguien-mas" class="label-alguien-mas">Alguien mas con sintomas</label>
-    </div>
-    <div class="seccion4" id="seccion4">
-      <div>
-        <label for="llenado-capilar" class="label-llenado-capilar">Llenado Capilar (segundos)</label>
-        <input type="number" id="llenado-capilar" name="llenado-capilar" step="0.01" /> 
-      </div>
-      <div>
-        <label for="ta-sisto" class="label-ta">Presion arterial (mmHg)</label>
-        <input type="number" id="ta-sisto" name="ta-sisto"   placeholder="sistólica"/> /
-        <input type="number" id="ta-diasto" name="ta-diasto"  placeholder="diastólica"/> 
-      </div>
-      <div>
-        <label for="fc" class="label-fc">Frecuencia cardiaca (lpm)</label>
-        <input type="number" id="fc" name="fc"/> 
-      </div>
-    </div>
-    <div class="seccion5" id="seccion5">
-      <div>
-        <label for="leucocitos" class="label-leucocitos">Leucocitos (mm3)</label>
-        <input type="number" id="leucocitos" name="leucocitos" step="0.01"/> 
-      </div>
-      <div>
-        <label for="plaquetas" class="label-plaquetas">Plaquetas (mm3)</label>
-        <input type="number" id="plaquetas" name="plaquetas" step="0.01"/> 
-      </div>
-      <div>
-        <label for="hematocrito" class="label-hematocrito">Hematocrito (%)</label>
-        <input type="number" id="hematocrito" name="hematocrito" step="0.01"/> 
-      </div>
-    </div>
-    <div>
-      <input type="checkbox" id="ingresado" name="ingresado">Paciente ingresado</input>
-    </div>  
-    <div class="seccion6" id="seccion6" style="display: none;">
-      <div>
-        <label for="TP" class="label-TP">TP (seg)</label>
-        <input type="number" id="TP" name="TP" step="0.01" /> 
-      </div>
-      <div>
-        <label for="TPT" class="label-TPT">TPT (seg)</label>
-        <input type="number" id="TPT" name="TPT" step="0.01"/> 
-      </div>
-      <div>
-        <label for="AST" class="label-AST">AST</label>
-        <input type="number" id="AST" name="AST" step="0.01"/> 
-      </div>
-      <div>
-        <label for="ALT" class="label-ALT">ALT</label>
-        <input type="number" id="ALT" name="ALT" step="0.01"/>
-      </div>
-      <div>
-        <label for="albumina" class="label-albumina">Albumina (g/dL)</label>
-        <input type="number" id="albumina" name="albumina" step="0.01"/>
-      </div>
-    </div>
-    <div id="botones" class="botones">
-      <input type="submit" name="submit" id="submit" value="Calcular" class="submit">
-      <button type= "button" class="borrar" id="borrar" name="borrar">Borrar</button>
-    </div>
-  </form>
-  <div class="div-riesgo" id="div-riesgo" style="display: none;">
-    <h1>Aqui se muestra el riesgo</h1>
-  </div>
   </div>
   <script src="index.js"></script>
 </body>
+
 </html>
